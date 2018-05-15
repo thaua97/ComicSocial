@@ -4,22 +4,16 @@ import Home from '@/pages/home/Home'
 import Login from '@/pages/login/Login'
 import Cadastro from '@/pages/cadastro/Cadastro'
 import Perfil from '@/pages/perfil/Perfil'
-import Main from '@/pages/Main'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      component: Main,
-      children: [
-        {
-          path: '/',
-          name: 'Home',
-          component: Home
-        },
-      ]
+      name: 'Home',
+      component: Home
     },
     {
       path: '/login',
@@ -36,8 +30,5 @@ export default new Router({
       name: 'Perfil',
       component: Perfil
     }
-  ],
-  mode: 'history',
-  linkActiveClass: 'active-page',
-  linkExactActiveClass: 'current-page'
+  ]
 })

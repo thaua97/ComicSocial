@@ -1,7 +1,7 @@
 <template>
   <span>
     <header>
-        <navbar>
+        <navbar logo="Social" url="/" cor="">
             <li v-if="!usuario"><router-link  to="/login">Entrar</router-link></li>
             <li v-if="!usuario"><router-link  to="/cadastro">Cadastrar-se</router-link></li>        
         </navbar>
@@ -20,7 +20,14 @@
             </div>
         </div>
     </main>
-    <rodape></rodape>        
+    <rodape cor="bgf" logo="Social" descricao="Teste de descrição" ano="2018">
+      <span slot="links">
+        <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+      </span>
+    </rodape>      
   </span>
 </template>
 

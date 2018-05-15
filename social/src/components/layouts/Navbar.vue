@@ -1,10 +1,10 @@
 <template>
     <span>
-        <nav class="bgn">
-            <div class="nav-wrapper container">
-                <a href="#" class="brand-logo">Logo</a>
+        <nav :class="cor || 'bgn'">
+            <div class="nav-wrapper container">      
+                <router-link class="brand-logo" :to="url || '/'">{{logo || 'Site'}}</router-link>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <slot></slot>
+                    <slot />
                 </ul>
             </div>
         </nav>
@@ -12,7 +12,13 @@
 </template>
 <script>
     export default {
-        name: 'Navbar'
+        name: 'Navbar',
+        props: ['logo','url','cor'],
+        data () {
+            return {
+
+            }
+        }
     }
 </script>
 <style scoped>
